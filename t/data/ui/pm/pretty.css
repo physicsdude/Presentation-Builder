@@ -120,3 +120,6 @@ A:active { color: #F00; background: white none }
 .synUnderlined { color: #000000 ; text-decoration: underline }
 .synError      { color: #FFFFFF ; background: #FF0000 none }
 .synTodo       { color: #0000FF ; background: #FFFF00 none }
+
+.slide_background { height: 550px; }
+.slide_background_img { height: 550px; }
