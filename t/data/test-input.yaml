@@ -39,7 +39,49 @@ slides:
         points:
           - Moose is a Meta-Object system
           - <a target='_blank' href='https://www.youtube.com/watch?feature=player_detailpage&v=5oXCm4N3J_M#t=10s'>Basically, it like uses objects to like do stuff with objects</a>
-          - If you really want to know, ask this guy or something<br><img src='images/stefan-little-moose-creator.jpg'>
+  - title: Moose for immortals
+    background: images/stefan-little-moose-creator.jpg
+    sections:
+      - type: list
+        points:
+          - If you really want to know how Moose REALLY works, ask this guy
+          - He was a JavaScript developer until 2002
+          - <a href='http://perlcast.com/audio/Perlcast_Interview_050.mp3'>http://perlcast.com/audio/Perlcast_Interview_050.mp3</a>
+  - title: I do declare!
+    background: images/florian-ragwitz-moosex-declare.jpg
+    sections:
+      - type: list
+        points:
+          - Or ask this guy, he's hella smart --------->
+          - MooseX::Declare is everything you hoped Moose would be, and more
+  - title: Dude, did you just shift yourself???
+    background: images/mosex-declare-shift-dude.jpg
+    sections:
+      - type: list
+        points:
+          - It sweeps SO much more under the rug, it's CRAZY (see next slide please)
+          - Seriously though, it means you can write beautiful code
+          - But still use all of things you love about Perl (The CPAN, one liners, magical variables, map, grep, sort, oh my!)
+          - (I'm talking about this vs. giving up and using Ruby or Python or what not!)
+  - title: Perl vs. Moose vs. MooseX Declare Smackdown
+    background: images/perl-moose-moosex-declare.jpg
+  - title: Moar MooseX::Declare Please
+    background: images/moose-extensions.jpeg
+    sections:
+      - type: list
+        points:
+          - All of the examples in this talk are MooseX::Declare, because I like it a lot
+          - (But honestly they'd only look a bit messier without it)
+  - title: Why be different?
+    background: images/zappa-moose.jpg
+    sections:
+      - type: list
+        points:
+          - This talk uses the S5 presentation system 
+          - To display HTML generated with module I wrote for this talk 
+          - Presentation::Builder
+          - <a href='https://github.com/physicsdude/Presentation-Builder'>https://github.com/physicsdude/Presentation-Builder</a>
+          - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, etc.
   - title: Intro
     sections:
       - type: snippet
@@ -146,12 +188,6 @@ slides:
       - type: list
         points:
           - .
-  - title: images florian-ragwitz-moosex-declare.jpg
-    background: images/florian-ragwitz-moosex-declare.jpg
-    sections:
-      - type: list
-        points:
-          - .
   - title: images funny-pictures-moose-takes-a-photo.jpeg
     background: images/funny-pictures-moose-takes-a-photo.jpeg
     sections:
@@ -160,24 +196,6 @@ slides:
           - .
   - title: images general-moose.jpg
     background: images/general-moose.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images moose-extensions.jpeg
-    background: images/moose-extensions.jpeg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images moose-x-declare-dude.jpg
-    background: images/moose-x-declare-dude.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images mosex-declare-shift-dude.jpg
-    background: images/mosex-declare-shift-dude.jpg
     sections:
       - type: list
         points:
@@ -206,12 +224,6 @@ slides:
       - type: list
         points:
           - .
-  - title: images title-image.jpg
-    background: images/title-image.jpg
-    sections:
-      - type: list
-        points:
-          - .
   - title: images very-meta.jpg
     background: images/very-meta.jpg
     sections:
@@ -220,12 +232,6 @@ slides:
           - .
   - title: images yeee-haaaaah.jpeg
     background: images/yeee-haaaaah.jpeg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images zappa-moose.jpg
-    background: images/zappa-moose.jpg
     sections:
       - type: list
         points:
