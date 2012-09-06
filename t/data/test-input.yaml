@@ -81,7 +81,7 @@ slides:
           - To display HTML generated with module I wrote for this talk 
           - Presentation::Builder
           - <a href='https://github.com/physicsdude/Presentation-Builder'>https://github.com/physicsdude/Presentation-Builder</a>
-          - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, <b>adding images can be a huge pain</b>, etc.
+          - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, <b>adding images can be a huge pain</b>, <b>no frelling syntax highlighting!?</b> etc.
   - title: I can Presentation::Builder and so can YOU
     background: images/richard-feynman.jpg
     sections:
@@ -93,6 +93,7 @@ slides:
           - Add some meta info and your slides to the config file
           - Ship IT!
           - <i><b>Would you like to know more?</b></i>
+
   - title: "But wait, there's more!"
     background: images/dr_strangelove_1ed07.jpeg
     sections:
@@ -104,10 +105,7 @@ slides:
           - Oh yeah, you have to add the contents of less.css to your template's css or something if you want that to work (room for improvement here)
   - title: What is this funky YAML config file you speak of?
     background: images/yaml-example.jpg
-    sections:
-      - type: list
-        points:
-          - YAML for the previous slide, and this one
+
   - title: Coercion
     sections:
       - type: snippet
