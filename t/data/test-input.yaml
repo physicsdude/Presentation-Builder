@@ -1,0 +1,233 @@
+title: Dr. Strange... Moose or: How I Learned to Stop Worrying and Love Perl
+author: Bryan Gmyrek, Ph.D.
+affiliation: Liquid Web, Inc.
+sources:
+  - ../Presentation/
+slides:
+  - title: Dr. Strange... Moose
+    background: images/title-image.jpg
+    sections:
+      - type: raw
+        location: left
+        html: |
+          <h2>or: How I Learned to Stop Worrying and Love Perl</h2>
+          <h3>Bryan Gmyrek</h3>
+          <h4>LiquidWeb, Inc</h4>
+  - title: WTF
+    background: images/steve-martin-moose.jpg
+    sections:
+      - type: list
+        location: left
+        points:
+          - Who is this guy anyway?
+          - No, I'm not one of the authors of Moose, the coolest kid on the block, or one of the world's foremost experts on OO
+          - I'm a retired particle physicist, who somehow learned Perl by mistake in graduate school
+  - title: Then why did you write this talk?
+    background: images/very-meta.jpg
+    sections:
+      - type: list
+        location: left
+        points:
+          - I just like Moose and I wanted to brush up on it, so I wrote a module to write this talk with
+          - This Moose talk writes itself <b>WITH</b> Moose --------->>
+          - <b>Disclaimer</b> Don't take anything you see here for the best way to do it ... it's just the way I did it
+          - Moose is very meta too
+  - title: Moose for idiots
+    background: images/dr-lexus-moose.jpg
+    sections:
+      - type: list
+        points:
+          - Moose is a Meta-Object system
+          - <a target='_blank' href='https://www.youtube.com/watch?feature=player_detailpage&v=5oXCm4N3J_M#t=10s'>Basically, it like uses objects to like do stuff with objects</a>
+          - If you really want to know, ask this guy or something<br><img src='images/stefan-little-moose-creator.jpg'>
+  - title: Intro
+    sections:
+      - type: snippet
+        name: intro
+  - title: Coercion
+    sections:
+      - type: snippet
+        name: coerce definition
+  - title: Make them an offer they cant refuse
+    sections:
+      - type: snippet
+        name: coerce usage
+  - title: Make them an offer they cant refuse
+    sections:
+      - type: snippet
+        name: coerce usage
+  - title: Around
+    sections:
+      - type: snippet
+        name: around
+  - title: Method Signatures, colons, and YOU
+    sections:
+      - type: snippet
+        name: colon method signatures
+  - title: Advanced isa
+    sections:
+      - type: snippet
+        name: advanced isa
+  - title: Coercing objects
+    sections:
+      - type: snippet
+        name: coercions and type constraints for objects
+  - title: What do you get when you put a Moose in a box?
+    sections:
+      - type: snippet
+        name: Moose::Autobox
+  - title: Be Lazy
+    sections:
+      - type: snippet
+        name: lazy_build
+  - title: Handle anything
+    sections:
+      - type: snippet
+        name: handles
+  - title: Snippet class
+    sections:
+      - type: snippet
+        name: snippet class
+  - title: Overthruster Override
+    sections:
+      - type: snippet
+        name: override
+  - title: Classy
+    sections:
+      - type: snippet
+        name: class
+  - title: What type of class are you taking?
+    sections:
+      - type: snippet
+        name: class_type definition
+  - title: More colons and stuff
+    sections:
+      - type: snippet
+        name: colon method signatures 2
+  - title: images zappa-moose.jpg
+    background: images/zappa-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images Watch_For_Moose.jpeg
+    background: images/Watch_For_Moose.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images biden-moose.jpg
+    background: images/biden-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images cartoon-moose-9.gif
+    background: images/cartoon-moose-9.gif
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images dr-lexus-moose.jpg
+    background: images/dr-lexus-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images dr-strangelove.jpeg
+    background: images/dr-strangelove.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images dr_strangelove_1ed07.jpeg
+    background: images/dr_strangelove_1ed07.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images florian-ragwitz-moosex-declare.jpg
+    background: images/florian-ragwitz-moosex-declare.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images funny-pictures-moose-takes-a-photo.jpeg
+    background: images/funny-pictures-moose-takes-a-photo.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images general-moose.jpg
+    background: images/general-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images moose-extensions.jpeg
+    background: images/moose-extensions.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images moose-x-declare-dude.jpg
+    background: images/moose-x-declare-dude.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images mosex-declare-shift-dude.jpg
+    background: images/mosex-declare-shift-dude.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images sellers-moose.jpg
+    background: images/sellers-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images sellers.jpeg
+    background: images/sellers.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images stefan-little-moose-creator.jpg
+    background: images/stefan-little-moose-creator.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images steve-martin-moose.jpg
+    background: images/steve-martin-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images title-image.jpg
+    background: images/title-image.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images very-meta.jpg
+    background: images/very-meta.jpg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images yeee-haaaaah.jpeg
+    background: images/yeee-haaaaah.jpeg
+    sections:
+      - type: list
+        points:
+          - .
+  - title: images zappa-moose.jpg
+    background: images/zappa-moose.jpg
+    sections:
+      - type: list
+        points:
+          - .
+
