@@ -2,7 +2,7 @@ title: Dr. Strange... Moose or: How I Learned to Stop Worrying and Love Perl
 author: Bryan Gmyrek, Ph.D.
 affiliation: Liquid Web, Inc.
 sources:
-  - ../Presentation/
+  - ../
 slides:
   - title: Dr. Strange... Moose
     background: images/title-image.jpg
@@ -81,11 +81,33 @@ slides:
           - To display HTML generated with module I wrote for this talk 
           - Presentation::Builder
           - <a href='https://github.com/physicsdude/Presentation-Builder'>https://github.com/physicsdude/Presentation-Builder</a>
-          - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, etc.
-  - title: Intro
+          - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, <b>adding images can be a huge pain</b>, etc.
+  - title: I can Presentation::Builder and so can YOU
+    background: images/richard-feynman.jpg
+    sections:
+      - type: list
+        points:
+          - "Get your favorite S5 template <div style='font-size: 0.7em'>You can do whatever you want in the header of the template and any content in the 'presentation' div will be overwritten</div>"
+          - Make a YAML config file file
+          - "If you want to use snippets, mark up your code with <br>#&lt;snip some name&gt;<br>...<br>#&lt;/snip&gt;"
+          - Add some meta info and your slides to the config file
+          - Ship IT!
+          - <i><b>Would you like to know more?</b></i>
+  - title: "But wait, there's more!"
+    background: images/dr_strangelove_1ed07.jpeg
     sections:
       - type: snippet
-        name: intro
+        name: how to use presentation builder
+      - type: list
+        points:
+          - Yes, this example was pulled from the code used to generate the text you're reading right now, and syntax highlighted for HTML using Text::VimColor
+          - Oh yeah, you have to add the contents of less.css to your template's css or something if you want that to work (room for improvement here)
+  - title: What is this funky YAML config file you speak of?
+    background: images/yaml-example.jpg
+    sections:
+      - type: list
+        points:
+          - YAML for the previous slide, and this one
   - title: Coercion
     sections:
       - type: snippet
@@ -172,18 +194,6 @@ slides:
           - .
   - title: images dr-lexus-moose.jpg
     background: images/dr-lexus-moose.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images dr-strangelove.jpeg
-    background: images/dr-strangelove.jpeg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images dr_strangelove_1ed07.jpeg
-    background: images/dr_strangelove_1ed07.jpeg
     sections:
       - type: list
         points:
