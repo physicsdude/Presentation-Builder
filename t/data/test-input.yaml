@@ -265,3 +265,5 @@ slides:
       - type: list
         points:
           - Now that you know enough to be DANGEROUS, go forth and Moose!
+  - title: NYTProf Results
+    background: images/nytprof.jpg
