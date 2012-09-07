@@ -1,25 +1,16 @@
+#<snip class>
 use MooseX::Declare;
 use Method::Signatures::Modifiers;
 class Presentation::Builder::Slide::Section {
 	use Presentation::Builder::Types;
-	has 'type' => (
-		isa      => 'Str',
-		is       => 'ro',
-		required => 1,
-	);
-	has 'location' => (
-		isa      => 'Str',
-		is       => 'ro',
-		default  => 'slide_left',
-	);
-	has 'html' => (
-		isa      => 'Str',
-		is       => 'rw',
-	);
+	has 'type'     => ( isa => 'Str', is => 'ro', required => 1 );
+	has 'location' => ( isa => 'Str', is => 'ro', default  => 'slide_left' );
+	has 'html'     => ( isa => 'Str', is => 'rw');
 	method content {
 		return "<div class='section ".$self->location."'>\n".$self->html."\n</div>";
 	}
 }
+#</snip>
 
 class Presentation::Builder::Slide::Section::Raw 
 	extends Presentation::Builder::Slide::Section {

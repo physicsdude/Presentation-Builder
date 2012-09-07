@@ -1,3 +1,4 @@
+#<snip typeconstraints>
 use MooseX::Declare;
 use Method::Signatures::Modifiers;
 class Presentation::Builder::Types {
@@ -7,6 +8,12 @@ class Presentation::Builder::Types {
 	as 'Str',
 	where { return 1 if -e $_ };
 
+	subtype 'ImageFile',
+	as 'Str',
+	where { /\.(jpg|png|gif|jpeg)$/i };
+	# Don't require this to be a valid image on build
+#</snip>
+
 	subtype 'ConfigFile',
 	as 'File',
 	where { /\.ya?ml$/i };
@@ -14,12 +21,6 @@ class Presentation::Builder::Types {
 	subtype 'TemplateFile',
 	as 'File',
 	where { /\.html$/i };
-
-	# one of these things is not like the other
-	# Don't require this to be a valid image on build
-	subtype 'ImageFile',
-	as 'Str',
-	where { /\.(jpg|png|gif|jpeg)$/i };
 
 	coerce 'File',
 	from 'Str',

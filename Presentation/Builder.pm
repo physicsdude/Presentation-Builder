@@ -3,17 +3,6 @@ use MooseX::Declare;
 use Method::Signatures::Modifiers;
 use Modern::Perl;
 #</snip intro>
-#<snip class>
-#s+ MooseX::Declare sets up
-#s	+ Moose and MooseX::Method::Signatures 
-#s 	+ Keywords like class
-#s+ The class is made immutable for you
-#s+ You don't have to end your file with
-#s	1; or 'POE POE POE POE'; TRUE; or FALSE;
-#s+ It cleans up after itself 
-#s	with namespace::autoclean
-#s+ (I hear moose droppings are naaasty)
-#s+ It does what you hoped Moose would!
 class Presentation::Builder {
 	use YAML;
 	use File::Slurp;
@@ -21,7 +10,6 @@ class Presentation::Builder {
 	use Presentation::Builder::Template;
 	use Presentation::Builder::Slides;
 	use Presentation::Builder::Sources;
-#</snip class>
 	has 'type' => (
 		isa      => 'Str',
 		is       => 'ro',
@@ -42,10 +30,6 @@ class Presentation::Builder {
 		lazy_build => 1
 	);
 	method _build_data {
-#s+ Note the fancy 'method' keyword above
-#s+ AND
-#s+ That I'm not <b>shifting myself</b>
-#s+ Gee thanks MooseX::Method::Signatures!
 		my $ret = Load(scalar 
 			File::Slurp::read_file($self->input_file));
 #</snip lazy_build>
@@ -57,7 +41,6 @@ class Presentation::Builder {
 		required => 1,
 	);
 #<snip handles>
-#s + Here's an example of "Method Delegation"
 	has 'template' => (
 		isa      => 'Presentation::Builder::Template',
 		is       => 'rw',
@@ -68,10 +51,6 @@ class Presentation::Builder {
 		my $t_pkg = "Presentation::Builder::Template::".$self->type;
 		return $t_pkg->new(template_file => $self->template_file);
 	}
-#s + The handles => ['dom'] part means that 
-#s    you can call $self->dom() and that 
-#s    call will be 'handled' by ::Template
-#s + It'll be equivalent to $self->template->dom();
 #</snip>
 
 	has 'slides' => (
@@ -97,7 +76,7 @@ class Presentation::Builder {
 		$self->dom->at('html title')->replace_content($data->{title});
 		my $footer = $data->{footer};
 		if ( !$footer ) {
-			$footer   .= "<h3>$data->{author} ~ $data->{affiliation} ~ ".localtime."</h3>";
+			$footer   .= "<h3>$data->{author} ~ $data->{affiliation} ~ ".localtime." ~ Powered by ".$self->type." and Presentation::Builder</h3>";
 			$footer   .= "<h3>$data->{title}</h3>";
 		}
 		$self->dom->at('#footer')->replace_content($footer);

@@ -26,7 +26,7 @@
       <div id="controls"><!-- DO NOT EDIT --></div>
       <div id="currentSlide"><!-- DO NOT EDIT --></div>
       <div id="header"></div>
-      <div id="footer"><h3>Bryan Gmyrek, Ph.D. ~ Liquid Web, Inc. ~ Thu Sep  6 11:29:29 2012</h3><h3>Dr. Strange... Moose or: How I Learned to Stop Worrying and Love Perl</h3></div>
+      <div id="footer"><h3>Bryan Gmyrek, Ph.D. ~ Liquid Web, Inc. ~ Thu Sep  6 17:15:25 2012 ~ Powered by S5 and Presentation::Builder</h3><h3>Dr. Strange... Moose or: How I Learned to Stop Worrying and Love Perl</h3></div>
     </div>
 
     <div class="presentation">
@@ -48,7 +48,8 @@
 <ul>
 	<li>Who is this guy anyway?</li>
 	<li>No, I&#39;m not one of the authors of Moose, the coolest kid on the block, or one of the world&#39;s foremost experts on OO</li>
-	<li>I&#39;m a retired particle physicist, who somehow learned Perl by mistake in graduate school</li>
+	<li>I&#39;m an ex-particle physicist, who somehow learned Perl by mistake in graduate school</li>
+	<li>I think &quot;The Jerk&quot; is the funniest move ever made</li>
 </ul>
 </div>
 </div>
@@ -59,8 +60,8 @@
 <div class="section left">
 <ul>
 	<li>I just like Moose and I wanted to brush up on it, so I wrote a module to write this talk with</li>
-	<li>This Moose talk writes itself <b>WITH</b> Moose ---------&gt;&gt;</li>
-	<li><b>Disclaimer</b> Don&#39;t take anything you see here for the best way to do it ... it&#39;s just the way I did it</li>
+	<li>This Moose talk writes itself <b>WITH</b> Moose ----&gt;&gt;</li>
+	<li>( More on that later )</li>
 	<li>Moose is very meta too</li>
 </ul>
 </div>
@@ -68,10 +69,17 @@
 
 
 <div class="slide">
+<h1 style="display: none">Would You Like to Know More about Moose Internals?</h1><div style="float: right;"><img class="slide_background_img" src="images/would-you-like-to-know-more.jpg" /></div><h1>Would You Like to Know More about Moose Internals?</h1>
+
+</div>
+
+
+<div class="slide">
 <h1 style="display: none">Moose for idiots</h1><div style="float: right;"><img class="slide_background_img" src="images/dr-lexus-moose.jpg" /></div><h1>Moose for idiots</h1>
 <div class="section slide_left">
 <ul>
-	<li>Moose is a Meta-Object system</li>
+	<li>Moose is a Meta-Object system... what is that?</li>
+	<li>It&#39;s what developers crave (It&#39;s got ELECTROLYTES and $#!T)</li>
 	<li><a href="https://www.youtube.com/watch?feature=player_detailpage&amp;v=5oXCm4N3J_M#t=10s" target="_blank">Basically, it like uses objects to like do stuff with objects</a></li>
 </ul>
 </div>
@@ -91,11 +99,19 @@
 
 
 <div class="slide">
+<h1 style="display: none">All I ever asked for was frikkin sharks with frikkin...</h1><div style="float: right;"><img class="slide_background_img" src="images/joel-berger.jpg" /></div><h1>All I ever asked for was frikkin sharks with frikkin...</h1>
+
+</div>
+
+
+<div class="slide">
 <h1 style="display: none">I do declare!</h1><div style="float: right;"><img class="slide_background_img" src="images/florian-ragwitz-moosex-declare.jpg" /></div><h1>I do declare!</h1>
 <div class="section slide_left">
 <ul>
 	<li>Or ask this guy, he&#39;s hella smart ---------&gt;</li>
 	<li>MooseX::Declare is everything you hoped Moose would be, and more</li>
+	<li>A lot of it thanks to MooseX::Method::Signatures, which is also available in Method::Signatures, apart from MooseX::Declare</li>
+	<li>This is a great talk, called Moose for Ruby Programmers, by Piers Cawley <a href="http://vimeo.com/4627327">http://vimeo.com/4627327</a> (5:00)</li>
 </ul>
 </div>
 </div>
@@ -125,7 +141,11 @@
 <div class="section slide_left">
 <ul>
 	<li>All of the examples in this talk are MooseX::Declare, because I like it a lot</li>
-	<li>(But honestly they&#39;d only look a bit messier without it)</li>
+	<li>MooseX::Declare gives you</li>
+	<li>Moose and MooseX::Method::Signatures, Keywords like class, The class is made immutable for you</li>
+	<li>You don&#39;t have to end your file with 1; or &#39;POE POE POE POE&#39;; TRUE; or FALSE;</li>
+	<li>It cleans up after itself with namespace::autoclean</li>
+	<li>It does what you hoped Moose would, so you can just freaking code!</li>
 </ul>
 </div>
 </div>
@@ -140,6 +160,18 @@
 	<li>Presentation::Builder</li>
 	<li><a href="https://github.com/physicsdude/Presentation-Builder">https://github.com/physicsdude/Presentation-Builder</a></li>
 	<li>Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don&#39;t understand and/or don&#39;t want to deal with</b>, <b>having to show example code instead of real code</b>, <b>adding images can be a huge pain</b>, <b>no frelling syntax highlighting!?</b> etc.</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Advacned OO Design</h1><div style="float: right;"><img class="slide_background_img" src="images/advanced-oo-design.jpg" /></div><h1>Advacned OO Design</h1>
+<div class="section slide_left">
+<ul>
+	<li>Pencil and paper, oh my</li>
+	<li>Using MooseX::Declare encourages objectyness</li>
+	<li>Rough around the edges</li>
 </ul>
 </div>
 </div>
@@ -165,13 +197,12 @@
 <div class="section slide_left">
 <div class="snippet"><pre>
 <span class="synStatement">use </span>Presentation::Builder;
-<span class="synStatement">my</span> <span class="synIdentifier">$pb</span> = Presentation::Builder-&gt;<span class="synStatement">new</span>(
-	<span class="synConstant">input_file    </span>=&gt; <span class="synConstant">&quot;data/test-input.yaml&quot;</span>, 
-	<span class="synConstant">template_file </span>=&gt; <span class="synConstant">&quot;data/index.base.html&quot;</span>,
-	<span class="synConstant">output_file   </span>=&gt; <span class="synConstant">&quot;data/index.html&quot;</span>,
+<span class="synStatement">my</span> <span class="synIdentifier">$pb</span> = Presentation::Builder-&gt;new(
+	<span class="synConstant">input_file</span>    =&gt; <span class="synConstant">&quot;data/test-input.yaml&quot;</span>, 
+	<span class="synConstant">template_file</span> =&gt; <span class="synConstant">&quot;data/index.base.html&quot;</span>,
+	<span class="synConstant">output_file</span>   =&gt; <span class="synConstant">&quot;data/index.html&quot;</span>,
 );
-<span class="synIdentifier">$pb</span>-&gt;generate();
-<span class="synComment">#</span>
+<span class="synIdentifier">$pb-&gt;generate</span>();
 </pre></div>
 </div><div class="section slide_left">
 <ul>
@@ -189,14 +220,231 @@
 
 
 <div class="slide">
-<h1>Coercion</h1>
+<h1 style="display: none">Do the MOOSE already!</h1><div style="float: right;"><img class="slide_background_img" src="images/cartoon-moose-9.gif" /></div><h1>Do the MOOSE already!</h1>
+<div class="section slide_left">
+<ul>
+	<li>What we&#39;ll cover is just some of Moose</li>
+	<li>Has (isa, is, lay_build)</li>
+	<li>Objects, extends, and overriding</li>
+	<li>Method Modifiers (before/around/after)</li>
+	<li>Method Signatures</li>
+	<li>Type Constraints</li>
+	<li>Coercions</li>
+	<li>Moose::Autobox</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">I can has has?</h1><div style="float: right;"><img class="slide_background_img" src="images/has.jpg" /></div><h1>I can has has?</h1>
+<div class="section slide_left">
+<ul>
+	<li>Has is probably the Moosey thing you&#39;ll use the most</li>
+	<li>Defines your class data</li>
+	<li>Keeps you from doing things like $self-&gt;{fubar}</li>
+	<li>Does type checking, read/write access, lazy building and more</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Has, and isa</h1><div style="float: right;"><img class="slide_background_img" src="images/biden-moose.jpg" /></div><h1>Has, and isa</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+	has <span class="synConstant">&#39;list&#39;</span> =&gt; (
+		<span class="synConstant">isa</span> =&gt; <span class="synConstant">&#39;ArrayRef[Presentation::Builder::Slide]&#39;</span>,
+		<span class="synConstant">is</span>  =&gt; <span class="synConstant">&#39;rw&#39;</span>,
+		<span class="synConstant">default</span> =&gt; <span class="synStatement">sub </span>{ [] },
+	);
+</pre></div>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Objecty Perl</h1><div style="float: right;"><img class="slide_background_img" src="buffy.jpg" /></div><h1>Objecty Perl</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+<span class="synStatement">use </span>MooseX::Declare;
+<span class="synStatement">use </span>Method::Signatures::Modifiers;
+class Presentation::Builder::Slide::Section {
+	<span class="synStatement">use </span>Presentation::Builder::Types;
+	has <span class="synConstant">&#39;type&#39;</span>     =&gt; ( <span class="synConstant">isa</span> =&gt; <span class="synConstant">&#39;Str&#39;</span>, <span class="synConstant">is</span> =&gt; <span class="synConstant">&#39;ro&#39;</span>, <span class="synConstant">required</span> =&gt; <span class="synConstant">1</span> );
+	has <span class="synConstant">&#39;location&#39;</span> =&gt; ( <span class="synConstant">isa</span> =&gt; <span class="synConstant">&#39;Str&#39;</span>, <span class="synConstant">is</span> =&gt; <span class="synConstant">&#39;ro&#39;</span>, <span class="synConstant">default</span>  =&gt; <span class="synConstant">&#39;slide_left&#39;</span> );
+	has <span class="synConstant">&#39;html&#39;</span>     =&gt; ( <span class="synConstant">isa</span> =&gt; <span class="synConstant">&#39;Str&#39;</span>, <span class="synConstant">is</span> =&gt; <span class="synConstant">&#39;rw&#39;</span>);
+	method content {
+		<span class="synStatement">return</span> <span class="synConstant">&quot;&lt;div class=&#39;section &quot;</span>.<span class="synIdentifier">$self-&gt;location</span>.<span class="synConstant">&quot;&#39;&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>.<span class="synIdentifier">$self-&gt;html</span>.<span class="synConstant">&quot;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;/div&gt;&quot;</span>;
+	}
+}
+</pre></div>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Snippet class, Extends and Override</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+class Presentation::Builder::Slide::Section::Snippet 
+	extends Presentation::Builder::Slide::Section {
+		<span class="synStatement">use </span>Text::VimColor;
+		override content {
+			<span class="synStatement">my</span> <span class="synIdentifier">$syntax</span> = Text::VimColor-&gt;new(
+   			<span class="synConstant">string</span> =&gt; <span class="synIdentifier">$self-&gt;html</span>,
+   			<span class="synConstant">filetype</span> =&gt; <span class="synConstant">&#39;perl&#39;</span>,
+			);
+			<span class="synIdentifier">$self-&gt;html</span>(<span class="synConstant">&quot;&lt;div class=&#39;snippet&#39;&gt;&lt;pre&gt;&quot;</span>.<span class="synIdentifier">$syntax-&gt;html</span>.<span class="synConstant">&quot;&lt;/pre&gt;&lt;/div&gt;&quot;</span>);
+			<span class="synStatement">return</span> super();
+		}
+}
+</pre></div>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Be Lazy with lazy_build</h1><div style="float: right;"><img class="slide_background_img" src="images/funny-pictures-moose-takes-a-photo.jpeg" /></div><h1>Be Lazy with lazy_build</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+	has <span class="synConstant">&#39;data&#39;</span> =&gt; (
+		<span class="synConstant">isa</span>        =&gt; <span class="synConstant">&#39;HashRef&#39;</span>,
+		<span class="synConstant">is</span>         =&gt; <span class="synConstant">&#39;ro&#39;</span>,
+		<span class="synConstant">lazy_build</span> =&gt; <span class="synConstant">1</span>
+	);
+	method _build_data {
+		<span class="synStatement">my</span> <span class="synIdentifier">$ret</span> = Load(<span class="synStatement">scalar</span> 
+			File::Slurp::read_file(<span class="synIdentifier">$self-&gt;input_file</span>));
+</pre></div>
+</div><div class="section slide_left">
+<ul>
+	<li>Note the fancy &#39;method&#39; keyword above</li>
+	<li>AND That I&#39;m not <b>shifting myself</b></li>
+	<li>Gee thanks method signatures!!</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Method Modifiers: before/around/after</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+	around content {
+		<span class="synStatement">my</span> <span class="synIdentifier">$str</span>;
+		<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;div class=&#39;slide&#39;&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+		<span class="synComment"># This is a hack to make S5 see the slide title, the h1 has to be first apparently</span>
+		<span class="synStatement">if</span> ( <span class="synIdentifier">$self-&gt;background</span> ) {
+			<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;&lt;h1 style=&#39;display: none&#39;&gt;&quot;</span>.<span class="synIdentifier">$self-&gt;title</span>.<span class="synConstant">&quot;&lt;/h1&gt;&quot;</span>;
+			<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;&lt;div style=&#39;float: right;&#39;&gt;&lt;img class=&#39;slide_background_img&#39; src=&#39;&quot;</span>.<span class="synIdentifier">$self-&gt;background</span>.<span class="synConstant">&quot;&#39;&gt;&lt;/div&gt;&quot;</span>;
+		}
+		<span class="synIdentifier">$str</span> .= <span class="synIdentifier">$self-&gt;$orig</span>(<span class="synIdentifier">@_</span>);
+		<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;/div&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+		<span class="synStatement">return</span> <span class="synIdentifier">$str</span>;
+	}
+</pre></div>
+</div><div class="section slide_left">
+<ul>
+	<li><a href="http://search.cpan.org/~doy/Moose-2.0603/lib/Moose/Manual/MethodModifiers.pod">Moose::Manual::Method::Modifiers</a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Method Signatures, colons, and YOU</h1><div style="float: right;"><img class="slide_background_img" src="images/colon.jpg" /></div><h1>Method Signatures, colons, and YOU</h1>
+<div class="section slide_left">
+<ul>
+	<li>use Method::Signatures::Modifiers; - slight speed boost + better error messages <span style="font-size: .7em">Make sure to RTFM, not exactly the same as MooseX::Method::Signatures (but you probably don&#39;t care)</span></li>
+</ul>
+</div><div class="section slide_left">
+<div class="snippet"><pre>
+	method add (Str :<span class="synIdentifier">$title</span>, ArrayRef :<span class="synIdentifier">$sections</span>, ImageFile :<span class="synIdentifier">$background</span>) {
+</pre></div>
+</div><div class="section slide_left">
+<ul>
+	<li>The : means that you can call this like $pb-&gt;slides-&gt;add(title =&gt; $some_title);</li>
+	<li>If you mean to do Str :$title above, and forget the :, here&#39;s the error you get with MSM if you call it like $pb-&gt;slides-&gt;add(title =&gt; &#39;Flouridated water, communists and YOU!&#39;);</li>
+	<li><b>In call to Presentation::Builder::Slides::add(), was given too many arguments, it expects 1 at bdg.pl line 14.</b></li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Say what?</h1>
+<div class="section slide_left">
+<ul>
+	<li>BUT if you don&#39;t use MSM, here&#39;s the error you get when you call $pb-&gt;slides-&gt;add(title =&gt; &#39;foo&#39;);</li>
+</ul>
+</div><div class="section slide_left">
+<table><tr><td width="70%"><div style="font-size: .7em"><b><i>Validation failed for &#39;Tuple[Tuple[Object,Str],Dict[]]&#39; with value &quot;[ [ Presentation::Builder::Slides=HASH(0x7ff8e10289b0), &quot;title&quot;, &quot;foo&quot; ], {  } ], Internal Validation Error is: \n [+] Validation failed for &#39;Tuple[Object,Str]&#39; with value &quot;[ Presentation::Builder::Slides{ type: &quot;S5&quot; }, &quot;title&quot;, &quot;foo&quot; ]&quot;\n  [+] More values than Type Constraints!&quot; at /Library/Perl/5.12/MooseX/Method/Signatures/Meta/Method.pm line 435 MooseX::Method::Signatures::Meta::Method::validate(&#39;MooseX::Method::Signatures::Meta::Method=HASH(0x7ff8e2a27b78)&#39;, &#39;ARRAY(0x7ff8e289f388)&#39;) called at /Library/Perl/5.12/MooseX/Method/Signatures/Meta/Method.pm line 151 Presentation::Builder::Slides::add(&#39;Presentation::Builder::Slides=HASH(0x7ff8e10289b0)&#39;, &#39;title&#39;, &#39;foo&#39;) called at bdg.pl line 14</i></b></div></td><td><img src="images/qbert.jpg" /></td></tr></table>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Handle anything</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+	has <span class="synConstant">&#39;template&#39;</span> =&gt; (
+		<span class="synConstant">isa</span>      =&gt; <span class="synConstant">&#39;Presentation::Builder::Template&#39;</span>,
+		<span class="synConstant">is</span>       =&gt; <span class="synConstant">&#39;rw&#39;</span>,
+		<span class="synConstant">handles</span>  =&gt; [<span class="synConstant">&#39;dom&#39;</span>],
+		<span class="synConstant">lazy_build</span> =&gt; <span class="synConstant">1</span>,
+	);
+	method _build_template {
+		<span class="synStatement">my</span> <span class="synIdentifier">$t_pkg</span> = <span class="synConstant">&quot;Presentation::Builder::Template::&quot;</span>.<span class="synIdentifier">$self-&gt;type</span>;
+		<span class="synStatement">return</span> <span class="synIdentifier">$t_pkg-&gt;new</span>(<span class="synConstant">template_file</span> =&gt; <span class="synIdentifier">$self-&gt;template_file</span>);
+	}
+</pre></div>
+</div><div class="section slide_left">
+<ul>
+	<li>Here&#39;s an example of &quot;Method Delegation&quot;</li>
+	<li>The handles =&gt; [&#39;dom&#39;] part means that you can call $self-&gt;dom() and that call will be &#39;handled&#39; by ::Template</li>
+	<li>It&#39;ll be equivalent to $self-&gt;template-&gt;dom();</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">This is not constraining enough!</h1><div style="float: right;"><img class="slide_background_img" src="images/master-shake.jpg" /></div><h1>This is not constraining enough!</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+<span class="synStatement">use </span>MooseX::Declare;
+<span class="synStatement">use </span>Method::Signatures::Modifiers;
+class Presentation::Builder::Types {
+	<span class="synStatement">use </span>Moose::Util::TypeConstraints;
+
+	subtype <span class="synConstant">&#39;File&#39;</span>,
+	as <span class="synConstant">&#39;Str&#39;</span>,
+	where { <span class="synStatement">return</span> <span class="synConstant">1</span> <span class="synStatement">if</span> <span class="synStatement">-e</span> <span class="synIdentifier">$_</span> };
+
+	subtype <span class="synConstant">&#39;ImageFile&#39;</span>,
+	as <span class="synConstant">&#39;Str&#39;</span>,
+	where { <span class="synStatement">/</span><span class="synSpecial">\.(</span><span class="synConstant">jpg|png|gif|jpeg</span><span class="synSpecial">)</span><span class="synConstant">$</span><span class="synStatement">/i</span> };
+	<span class="synComment"># Don&#39;t require this to be a valid image on build</span>
+</pre></div>
+</div><div class="section slide_left">
+<div class="snippet"><pre>
+	class_type <span class="synConstant">&#39;Mojo::DOM&#39;</span>;
+</pre></div>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Coercion - Make them an offer they cant refuse</h1><div style="float: right;"><img class="slide_background_img" src="images/Watch_For_Moose.jpeg" /></div><h1>Coercion - Make them an offer they cant refuse</h1>
 <div class="section slide_left">
 <div class="snippet"><pre>
 	coerce <span class="synConstant">&#39;ConfigFile&#39;</span>,
 	from <span class="synConstant">&#39;Str&#39;</span>,
 	via { _coerce_file(<span class="synIdentifier">$_</span>) };
 
-<span class="synIdentifier">	</span><span class="synStatement">sub</span><span class="synIdentifier"> _coerce_file </span>{
+	<span class="synStatement">sub </span><span class="synIdentifier">_coerce_file </span>{
 		<span class="synStatement">my</span> <span class="synIdentifier">$file_name</span> = <span class="synStatement">shift</span>;
 		<span class="synStatement">foreach</span> <span class="synStatement">my</span> <span class="synIdentifier">$d</span> ( <span class="synIdentifier">@INC</span> ) {
 			<span class="synStatement">my</span> <span class="synIdentifier">$full_path</span> = <span class="synConstant">&quot;</span><span class="synIdentifier">$d</span><span class="synConstant">/</span><span class="synIdentifier">$file_name</span><span class="synConstant">&quot;</span>;
@@ -206,93 +454,15 @@
 		}
 		<span class="synStatement">return</span> <span class="synIdentifier">$file_name</span>;
 	}
-<span class="synComment">#</span>
 </pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Make them an offer they cant refuse</h1>
-<div class="section slide_left">
+</div><div class="section slide_left">
 <div class="snippet"><pre>
 	has <span class="synConstant">&#39;input_file&#39;</span> =&gt; (
-		<span class="synConstant">isa      </span>=&gt; <span class="synConstant">&#39;ConfigFile&#39;</span>,
-		<span class="synConstant">is       </span>=&gt; <span class="synConstant">&#39;ro&#39;</span>,
-		<span class="synConstant">coerce   </span>=&gt; <span class="synConstant">1</span>,
-		<span class="synConstant">required </span>=&gt; <span class="synConstant">1</span>,
+		<span class="synConstant">isa</span>      =&gt; <span class="synConstant">&#39;ConfigFile&#39;</span>,
+		<span class="synConstant">is</span>       =&gt; <span class="synConstant">&#39;ro&#39;</span>,
+		<span class="synConstant">coerce</span>   =&gt; <span class="synConstant">1</span>,
+		<span class="synConstant">required</span> =&gt; <span class="synConstant">1</span>,
 	);
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Make them an offer they cant refuse</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	has <span class="synConstant">&#39;input_file&#39;</span> =&gt; (
-		<span class="synConstant">isa      </span>=&gt; <span class="synConstant">&#39;ConfigFile&#39;</span>,
-		<span class="synConstant">is       </span>=&gt; <span class="synConstant">&#39;ro&#39;</span>,
-		<span class="synConstant">coerce   </span>=&gt; <span class="synConstant">1</span>,
-		<span class="synConstant">required </span>=&gt; <span class="synConstant">1</span>,
-	);
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Around</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	around content {
-		<span class="synStatement">my</span> <span class="synIdentifier">$str</span>;
-		<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;div class=&#39;slide&#39;&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
-		<span class="synComment"># This is a hack to make S5 see the slide title, the h1 has to be first apparently</span>
-		<span class="synStatement">if</span> ( <span class="synIdentifier">$self</span>-&gt;background ) {
-			<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;&lt;h1 style=&#39;display: none&#39;&gt;&quot;</span>.<span class="synIdentifier">$self</span>-&gt;title.<span class="synConstant">&quot;&lt;/h1&gt;&quot;</span>;
-			<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;&lt;div style=&#39;float: right;&#39;&gt;&lt;img class=&#39;slide_background_img&#39; src=&#39;&quot;</span>.<span class="synIdentifier">$self</span>-&gt;background.<span class="synConstant">&quot;&#39;&gt;&lt;/div&gt;&quot;</span>;
-		}
-		<span class="synIdentifier">$str</span> .= <span class="synIdentifier">$self</span>-&gt;<span class="synIdentifier">$orig</span>(<span class="synIdentifier">@_</span>);
-		<span class="synIdentifier">$str</span> .= <span class="synConstant">&quot;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;/div&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
-		<span class="synStatement">return</span> <span class="synIdentifier">$str</span>;
-	}
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Method Signatures, colons, and YOU</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	method add (Str :<span class="synIdentifier">$title</span>, ArrayRef :<span class="synIdentifier">$sections</span>, ImageFile :<span class="synIdentifier">$background</span>) {
-<span class="synComment">#s+ The (Str :$title) above is an example of a method signature</span>
-<span class="synComment">#s+ The : means that you can call this like $pb-&gt;slides-&gt;add(title =&gt; $some_title);</span>
-<span class="synComment">#s+ use Method::Signatures::Modifiers; - slight speed boost + better error messages</span>
-<span class="synComment">#s+ If you mean to do Str :$title above, and forget the :, here&#39;s the error you get with MSM</span>
-<span class="synComment">#s   if you call it like $pb-&gt;slides-&gt;add(title =&gt; &#39;Flouridated water, communists and YOU!&#39;);</span>
-<span class="synComment">#s+ In call to Presentation::Builder::Slides::add(), was given too many arguments, it expects 1 at bdg.pl line 14.</span>
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Advanced isa</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	has <span class="synConstant">&#39;list&#39;</span> =&gt; (
-		<span class="synConstant">isa </span>=&gt; <span class="synConstant">&#39;ArrayRef[Presentation::Builder::Slide]&#39;</span>,
-		<span class="synConstant">is  </span>=&gt; <span class="synConstant">&#39;rw&#39;</span>,
-		<span class="synConstant">default </span>=&gt;<span class="synIdentifier"> </span><span class="synStatement">sub</span><span class="synIdentifier"> </span>{ [] },
-	);
-<span class="synComment">#</span>
 </pre></div>
 </div>
 </div>
@@ -308,17 +478,16 @@
 	coerce <span class="synConstant">&#39;MySections&#39;</span>,
 	from <span class="synConstant">&#39;ArrayRef&#39;</span>,
 	via { _coerce_mysections(<span class="synIdentifier">$_</span>) };
-<span class="synIdentifier">	</span><span class="synStatement">sub</span><span class="synIdentifier"> _coerce_mysections </span>{
-		<span class="synStatement">return</span> [ <span class="synStatement">map</span> {
-				<span class="synStatement">my</span> <span class="synIdentifier">$s_pkg</span> = <span class="synConstant">&quot;Presentation::Builder::Slide::Section::&quot;</span> . <span class="synStatement">ucfirst</span>(<span class="synIdentifier">$_</span>-&gt;{type}); 
-				<span class="synIdentifier">$s_pkg</span>-&gt;<span class="synStatement">new</span>(<span class="synIdentifier">$_</span>);
-			} @{<span class="synIdentifier">$_</span>} ];
+	<span class="synStatement">sub </span><span class="synIdentifier">_coerce_mysections </span>{
+		<span class="synStatement">return</span> [ <span class="synStatement">map {</span>
+				<span class="synStatement">my</span> <span class="synIdentifier">$s_pkg</span> = <span class="synConstant">&quot;Presentation::Builder::Slide::Section::&quot;</span> . <span class="synStatement">ucfirst</span>(<span class="synIdentifier">$_-&gt;{</span><span class="synConstant">type</span><span class="synIdentifier">}</span>); 
+				<span class="synIdentifier">$s_pkg-&gt;new</span>(<span class="synIdentifier">$_</span>);
+			<span class="synStatement">}</span> <span class="synIdentifier">@{$_}</span> ];
 	}
 	has <span class="synConstant">&#39;sections&#39;</span> =&gt; (
-		<span class="synConstant">isa      </span>=&gt; <span class="synConstant">&#39;Undef|MySections&#39;</span>, <span class="synConstant">is       </span>=&gt; <span class="synConstant">&#39;rw&#39;</span>,
-		<span class="synConstant">default  </span>=&gt;<span class="synIdentifier"> </span><span class="synStatement">sub</span><span class="synIdentifier"> </span>{ [] },   <span class="synConstant">coerce   </span>=&gt; <span class="synConstant">1</span>,
+		<span class="synConstant">isa</span>      =&gt; <span class="synConstant">&#39;Undef|MySections&#39;</span>, <span class="synConstant">is</span>       =&gt; <span class="synConstant">&#39;rw&#39;</span>,
+		<span class="synConstant">default</span>  =&gt; <span class="synStatement">sub </span>{ [] },   <span class="synConstant">coerce</span>   =&gt; <span class="synConstant">1</span>,
 	);
-<span class="synComment">#</span>
 </pre></div>
 </div>
 </div>
@@ -328,277 +497,57 @@
 <h1>What do you get when you put a Moose in a box?</h1>
 <div class="section slide_left">
 <div class="snippet"><pre>
-				<span class="synStatement">my</span> <span class="synIdentifier">$s_pkg</span>  = <span class="synConstant">&quot;Presentation::Builder::Slide::&quot;</span>.<span class="synIdentifier">$self</span>-&gt;type;
-				<span class="synIdentifier">$self</span>-&gt;list-&gt;<span class="synStatement">push</span>(<span class="synIdentifier">$s_pkg</span>-&gt;<span class="synStatement">new</span>(<span class="synConstant">title </span>=&gt; <span class="synIdentifier">$title</span>, <span class="synConstant">sections </span>=&gt; <span class="synIdentifier">$sections</span>, <span class="synConstant">background </span>=&gt; <span class="synIdentifier">$background</span>));
-<span class="synComment">#s+ Thanks to Moose::Autobox, you can do things like this</span>
-<span class="synComment">#</span>
+				<span class="synStatement">my</span> <span class="synIdentifier">$s_pkg</span>  = <span class="synConstant">&quot;Presentation::Builder::Slide::&quot;</span>.<span class="synIdentifier">$self-&gt;type</span>;
+				<span class="synIdentifier">$self-&gt;list-&gt;push</span>(<span class="synIdentifier">$s_pkg-&gt;new</span>(<span class="synConstant">title</span> =&gt; <span class="synIdentifier">$title</span>, <span class="synConstant">sections</span> =&gt; <span class="synIdentifier">$sections</span>, <span class="synConstant">background</span> =&gt; <span class="synIdentifier">$background</span>));
 </pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Be Lazy</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	has <span class="synConstant">&#39;data&#39;</span> =&gt; (
-		<span class="synConstant">isa        </span>=&gt; <span class="synConstant">&#39;HashRef&#39;</span>,
-		<span class="synConstant">is         </span>=&gt; <span class="synConstant">&#39;ro&#39;</span>,
-		<span class="synConstant">lazy_build </span>=&gt; <span class="synConstant">1</span>
-	);
-	method _build_data {
-<span class="synComment">#s+ Note the fancy &#39;method&#39; keyword above</span>
-<span class="synComment">#s+ AND</span>
-<span class="synComment">#s+ That I&#39;m not &lt;b&gt;shifting myself&lt;/b&gt;</span>
-<span class="synComment">#s+ Gee thanks MooseX::Method::Signatures!</span>
-		<span class="synStatement">my</span> <span class="synIdentifier">$ret</span> = Load(<span class="synStatement">scalar</span> 
-			File::Slurp::read_file(<span class="synIdentifier">$self</span>-&gt;input_file));
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Handle anything</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-<span class="synComment">#s + Here&#39;s an example of &quot;Method Delegation&quot;</span>
-	has <span class="synConstant">&#39;template&#39;</span> =&gt; (
-		<span class="synConstant">isa      </span>=&gt; <span class="synConstant">&#39;Presentation::Builder::Template&#39;</span>,
-		<span class="synConstant">is       </span>=&gt; <span class="synConstant">&#39;rw&#39;</span>,
-		<span class="synConstant">handles  </span>=&gt; [<span class="synConstant">&#39;dom&#39;</span>],
-		<span class="synConstant">lazy_build </span>=&gt; <span class="synConstant">1</span>,
-	);
-	method _build_template {
-		<span class="synStatement">my</span> <span class="synIdentifier">$t_pkg</span> = <span class="synConstant">&quot;Presentation::Builder::Template::&quot;</span>.<span class="synIdentifier">$self</span>-&gt;type;
-		<span class="synStatement">return</span> <span class="synIdentifier">$t_pkg</span>-&gt;<span class="synStatement">new</span>(<span class="synConstant">template_file </span>=&gt; <span class="synIdentifier">$self</span>-&gt;template_file);
-	}
-<span class="synComment">#s + The handles =&gt; [&#39;dom&#39;] part means that </span>
-<span class="synComment">#s    you can call $self-&gt;dom() and that </span>
-<span class="synComment">#s    call will be &#39;handled&#39; by ::Template</span>
-<span class="synComment">#s + It&#39;ll be equivalent to $self-&gt;template-&gt;dom();</span>
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Snippet class</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-class Presentation::Builder::Slide::Section::Snippet 
-	extends Presentation::Builder::Slide::Section {
-		<span class="synStatement">use </span>Text::VimColor;
-		override content {
-			<span class="synStatement">my</span> <span class="synIdentifier">$syntax</span> = Text::VimColor-&gt;<span class="synStatement">new</span>(
-   			<span class="synConstant">string </span>=&gt; <span class="synIdentifier">$self</span>-&gt;html,
-   			<span class="synConstant">filetype </span>=&gt; <span class="synConstant">&#39;perl&#39;</span>,
-			);
-			<span class="synIdentifier">$self</span>-&gt;html(<span class="synConstant">&quot;&lt;div class=&#39;snippet&#39;&gt;&lt;pre&gt;&quot;</span>.<span class="synIdentifier">$syntax</span>-&gt;html.<span class="synConstant">&quot;&lt;/pre&gt;&lt;/div&gt;&quot;</span>);
-			<span class="synStatement">return</span> super();
-		}
-}
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Overthruster Override</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	override content {
-		<span class="synIdentifier">$self</span>-&gt;html(<span class="synConstant">&quot;&lt;ul&gt;</span><span class="synSpecial">\n\t</span><span class="synConstant">&lt;li&gt;&quot;</span>.<span class="synStatement">join</span>(<span class="synConstant">&quot;&lt;/li&gt;</span><span class="synSpecial">\n\t</span><span class="synConstant">&lt;li&gt;&quot;</span>,@{<span class="synIdentifier">$self</span>-&gt;points}).<span class="synConstant">&quot;&lt;/li&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;/ul&gt;&quot;</span>);
-		<span class="synStatement">return</span> super();
-	}
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>Classy</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-<span class="synComment">#s+ MooseX::Declare sets up</span>
-<span class="synComment">#s	+ Moose and MooseX::Method::Signatures </span>
-<span class="synComment">#s 	+ Keywords like class</span>
-<span class="synComment">#s+ The class is made immutable for you</span>
-<span class="synComment">#s+ You don&#39;t have to end your file with</span>
-<span class="synComment">#s	1; or &#39;POE POE POE POE&#39;; TRUE; or FALSE;</span>
-<span class="synComment">#s+ It cleans up after itself </span>
-<span class="synComment">#s	with namespace::autoclean</span>
-<span class="synComment">#s+ (I hear moose droppings are naaasty)</span>
-<span class="synComment">#s+ It does what you hoped Moose would!</span>
-class Presentation::Builder {
-	<span class="synStatement">use </span>YAML;
-	<span class="synStatement">use </span>File::Slurp;
-	<span class="synStatement">use </span>Presentation::Builder::Types;
-	<span class="synStatement">use </span>Presentation::Builder::Template;
-	<span class="synStatement">use </span>Presentation::Builder::Slides;
-	<span class="synStatement">use </span>Presentation::Builder::Sources;
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>What type of class are you taking?</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-	class_type <span class="synConstant">&#39;Mojo::DOM&#39;</span>;
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1>More colons and stuff</h1>
-<div class="section slide_left">
-<div class="snippet"><pre>
-<span class="synComment">#s+ BUT if you don&#39;t use MSM, here&#39;s the error you get when you call $pb-&gt;slides-&gt;add(title =&gt; &#39;foo&#39;);</span>
-<span class="synComment">#s Validation failed for &#39;Tuple[Tuple[Object,Str],Dict[]]&#39; with value &quot;[ [ Presentation::Builder::Slides=HASH(0x7ff8e10289b0), &quot;title&quot;, &quot;foo&quot; ], {  } ], Internal Validation Error is: \n [+] Validation failed for &#39;Tuple[Object,Str]&#39; with value &quot;[ Presentation::Builder::Slides{ type: &quot;S5&quot; }, &quot;title&quot;, &quot;foo&quot; ]&quot;\n  [+] More values than Type Constraints!&quot; at /Library/Perl/5.12/MooseX/Method/Signatures/Meta/Method.pm line 435.</span>
-<span class="synComment">#s MooseX::Method::Signatures::Meta::Method::validate(&#39;MooseX::Method::Signatures::Meta::Method=HASH(0x7ff8e2a27b78)&#39;, &#39;ARRAY(0x7ff8e289f388)&#39;) called at /Library/Perl/5.12/MooseX/Method/Signatures/Meta/Method.pm line 151</span>
-<span class="synComment">#s Presentation::Builder::Slides::add(&#39;Presentation::Builder::Slides=HASH(0x7ff8e10289b0)&#39;, &#39;title&#39;, &#39;foo&#39;) called at bdg.pl line 14</span>
-<span class="synComment">#s+ Make sure to RTFM, not exactly the same as MooseX::Method::Signatures (but you probably don&#39;t care)</span>
-<span class="synComment">#s+ It uses Data::Accessor, which uses XS (and didn&#39;t want to install on my system)</span>
-<span class="synComment">#</span>
-</pre></div>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images zappa-moose.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/zappa-moose.jpg" /></div><h1>images zappa-moose.jpg</h1>
-<div class="section slide_left">
+</div><div class="section slide_left">
 <ul>
-	<li>.</li>
+	<li>If you use <a href="http://search.cpan.org/~rjbs/Moose-Autobox-0.13/lib/Moose/Autobox.pm">Moose::Autobox</a>, you get fun things like this for free</li>
+	<li>Pluse even cooler stuff like this (from the docs)</li>
+	<li><pre>print [ 1 .. 10 ]-&gt;map(sub { $_ * $_ })-&gt;join(&#39;, &#39;);</pre></li>
 </ul>
 </div>
 </div>
 
 
 <div class="slide">
-<h1 style="display: none">images Watch_For_Moose.jpeg</h1><div style="float: right;"><img class="slide_background_img" src="images/Watch_For_Moose.jpeg" /></div><h1>images Watch_For_Moose.jpeg</h1>
+<h1 style="display: none">Is Moose a Commie plot, like Flouride?</h1><div style="float: right;"><img class="slide_background_img" src="images/general-moose.jpg" /></div><h1>Is Moose a Commie plot, like Flouride?</h1>
 <div class="section slide_left">
 <ul>
-	<li>.</li>
+	<li>Moose is great, but it has dowsides</li>
+	<li>Compile time penalty</li>
+	<li>New stuff to learn</li>
+	<li>You can <a href="https://metacpan.org/module/Moo">Moo<a> if the performance issues bother you</a></a></li>
+	<li>This has almost 2/3 of the features of Moose, few dependencies, but is compatible with Moose</li>
+	<li><a href="http://www.youtube.com/watch?v=MzTWTLaUZrg">Ask Matt Trout about that</a></li>
 </ul>
 </div>
 </div>
 
 
 <div class="slide">
-<h1 style="display: none">images biden-moose.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/biden-moose.jpg" /></div><h1>images biden-moose.jpg</h1>
+<h1 style="display: none">Uncle Moose Wants YOU!</h1><div style="float: right;"><img class="slide_background_img" src="images/sellers-moose.jpg" /></div><h1>Uncle Moose Wants YOU!</h1>
 <div class="section slide_left">
 <ul>
-	<li>.</li>
+	<li>But what can <b>YOU</b> do?</li>
+	<li>Start using MOOSE, there&#39;s strength in numbers!</li>
+	<li>Patches wanted for Presentation::Builder</li>
+	<li>Take different input/output format</li>
+	<li>Improve options for background/slide images</li>
+	<li>Allow snippets to be specified using file name and line numbers</li>
+	<li>Documentation</li>
+	<li>Take an index.html as input, process, spit index.html output</li>
+	<li>Or, write your own darn module!</li>
 </ul>
 </div>
 </div>
 
 
 <div class="slide">
-<h1 style="display: none">images cartoon-moose-9.gif</h1><div style="float: right;"><img class="slide_background_img" src="images/cartoon-moose-9.gif" /></div><h1>images cartoon-moose-9.gif</h1>
+<h1 style="display: none">YEEEEEEEEEEEEEEEEEHHHHHHHAAAAAAAAA</h1><div style="float: right;"><img class="slide_background_img" src="images/yeee-haaaaah.jpeg" /></div><h1>YEEEEEEEEEEEEEEEEEHHHHHHHAAAAAAAAA</h1>
 <div class="section slide_left">
 <ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images dr-lexus-moose.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/dr-lexus-moose.jpg" /></div><h1>images dr-lexus-moose.jpg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images funny-pictures-moose-takes-a-photo.jpeg</h1><div style="float: right;"><img class="slide_background_img" src="images/funny-pictures-moose-takes-a-photo.jpeg" /></div><h1>images funny-pictures-moose-takes-a-photo.jpeg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images general-moose.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/general-moose.jpg" /></div><h1>images general-moose.jpg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images sellers-moose.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/sellers-moose.jpg" /></div><h1>images sellers-moose.jpg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images sellers.jpeg</h1><div style="float: right;"><img class="slide_background_img" src="images/sellers.jpeg" /></div><h1>images sellers.jpeg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images stefan-little-moose-creator.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/stefan-little-moose-creator.jpg" /></div><h1>images stefan-little-moose-creator.jpg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images steve-martin-moose.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/steve-martin-moose.jpg" /></div><h1>images steve-martin-moose.jpg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images very-meta.jpg</h1><div style="float: right;"><img class="slide_background_img" src="images/very-meta.jpg" /></div><h1>images very-meta.jpg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
-</ul>
-</div>
-</div>
-
-
-<div class="slide">
-<h1 style="display: none">images yeee-haaaaah.jpeg</h1><div style="float: right;"><img class="slide_background_img" src="images/yeee-haaaaah.jpeg" /></div><h1>images yeee-haaaaah.jpeg</h1>
-<div class="section slide_left">
-<ul>
-	<li>.</li>
+	<li>Now that you know enough to be DANGEROUS, go forth and Moose!</li>
 </ul>
 </div>
 </div>

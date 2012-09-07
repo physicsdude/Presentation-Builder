@@ -21,7 +21,8 @@ slides:
         points:
           - Who is this guy anyway?
           - No, I'm not one of the authors of Moose, the coolest kid on the block, or one of the world's foremost experts on OO
-          - I'm a retired particle physicist, who somehow learned Perl by mistake in graduate school
+          - I'm an ex-particle physicist, who somehow learned Perl by mistake in graduate school
+          - I think "The Jerk" is the funniest move ever made
   - title: Then why did you write this talk?
     background: images/very-meta.jpg
     sections:
@@ -29,15 +30,18 @@ slides:
         location: left
         points:
           - I just like Moose and I wanted to brush up on it, so I wrote a module to write this talk with
-          - This Moose talk writes itself <b>WITH</b> Moose --------->>
-          - <b>Disclaimer</b> Don't take anything you see here for the best way to do it ... it's just the way I did it
+          - This Moose talk writes itself <b>WITH</b> Moose ---->>
+          - ( More on that later )
           - Moose is very meta too
+  - title: Would You Like to Know More about Moose Internals?
+    background: images/would-you-like-to-know-more.jpg
   - title: Moose for idiots
     background: images/dr-lexus-moose.jpg
     sections:
       - type: list
         points:
-          - Moose is a Meta-Object system
+          - Moose is a Meta-Object system... what is that?
+          - It's what developers crave (It's got ELECTROLYTES and $#!T)
           - <a target='_blank' href='https://www.youtube.com/watch?feature=player_detailpage&v=5oXCm4N3J_M#t=10s'>Basically, it like uses objects to like do stuff with objects</a>
   - title: Moose for immortals
     background: images/stefan-little-moose-creator.jpg
@@ -47,6 +51,8 @@ slides:
           - If you really want to know how Moose REALLY works, ask this guy
           - He was a JavaScript developer until 2002
           - <a href='http://perlcast.com/audio/Perlcast_Interview_050.mp3'>http://perlcast.com/audio/Perlcast_Interview_050.mp3</a>
+  - title: All I ever asked for was frikkin sharks with frikkin...
+    background: images/joel-berger.jpg
   - title: I do declare!
     background: images/florian-ragwitz-moosex-declare.jpg
     sections:
@@ -54,6 +60,8 @@ slides:
         points:
           - Or ask this guy, he's hella smart --------->
           - MooseX::Declare is everything you hoped Moose would be, and more
+          - A lot of it thanks to MooseX::Method::Signatures, which is also available in Method::Signatures, apart from MooseX::Declare
+          - "This is a great talk, called Moose for Ruby Programmers, by Piers Cawley <a href='http://vimeo.com/4627327'>http://vimeo.com/4627327</a> (5:00)"
   - title: Dude, did you just shift yourself???
     background: images/mosex-declare-shift-dude.jpg
     sections:
@@ -71,7 +79,11 @@ slides:
       - type: list
         points:
           - All of the examples in this talk are MooseX::Declare, because I like it a lot
-          - (But honestly they'd only look a bit messier without it)
+          - MooseX::Declare gives you
+          - Moose and MooseX::Method::Signatures, Keywords like class, The class is made immutable for you
+          - You don't have to end your file with 1; or 'POE POE POE POE'; TRUE; or FALSE;
+          - It cleans up after itself with namespace::autoclean
+          - It does what you hoped Moose would, so you can just freaking code!
   - title: Why be different?
     background: images/zappa-moose.jpg
     sections:
@@ -82,6 +94,14 @@ slides:
           - Presentation::Builder
           - <a href='https://github.com/physicsdude/Presentation-Builder'>https://github.com/physicsdude/Presentation-Builder</a>
           - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, <b>adding images can be a huge pain</b>, <b>no frelling syntax highlighting!?</b> etc.
+  - title: Advacned OO Design
+    background: images/advanced-oo-design.jpg
+    sections:
+      - type: list
+        points:
+          - Pencil and paper, oh my
+          - Using MooseX::Declare encourages objectyness
+          - Rough around the edges
   - title: I can Presentation::Builder and so can YOU
     background: images/richard-feynman.jpg
     sections:
@@ -93,7 +113,6 @@ slides:
           - Add some meta info and your slides to the config file
           - Ship IT!
           - <i><b>Would you like to know more?</b></i>
-
   - title: "But wait, there's more!"
     background: images/dr_strangelove_1ed07.jpeg
     sections:
@@ -105,31 +124,103 @@ slides:
           - Oh yeah, you have to add the contents of less.css to your template's css or something if you want that to work (room for improvement here)
   - title: What is this funky YAML config file you speak of?
     background: images/yaml-example.jpg
-
-  - title: Coercion
+  - title: Do the MOOSE already!
+    background: images/cartoon-moose-9.gif
     sections:
-      - type: snippet
-        name: coerce definition
-  - title: Make them an offer they cant refuse
+      - type: list
+        points:
+          - What we'll cover is just some of Moose
+          - Has (isa, is, lay_build)
+          - Objects, extends, and overriding
+          - Method Modifiers (before/around/after)
+          - Method Signatures
+          - Type Constraints
+          - Coercions
+          - Moose::Autobox
+  - title: I can has has?
+    background: images/has.jpg
     sections:
-      - type: snippet
-        name: coerce usage
-  - title: Make them an offer they cant refuse
-    sections:
-      - type: snippet
-        name: coerce usage
-  - title: Around
-    sections:
-      - type: snippet
-        name: around
-  - title: Method Signatures, colons, and YOU
-    sections:
-      - type: snippet
-        name: colon method signatures
-  - title: Advanced isa
+      - type: list
+        points:
+          - Has is probably the Moosey thing you'll use the most
+          - Defines your class data
+          - "Keeps you from doing things like $self->{fubar}"
+          - Does type checking, read/write access, lazy building and more
+  - title: Has, and isa
+    background: images/biden-moose.jpg
     sections:
       - type: snippet
         name: advanced isa
+  - title: Objecty Perl
+    background: buffy.jpg
+    sections:
+      - type: snippet
+        name: class
+  - title: Snippet class, Extends and Override
+    sections:
+      - type: snippet
+        name: snippet class
+  - title: Be Lazy with lazy_build
+    background: images/funny-pictures-moose-takes-a-photo.jpeg
+    sections:
+      - type: snippet
+        name: lazy_build
+      - type: list
+        points:
+          - Note the fancy 'method' keyword above
+          - AND That I'm not <b>shifting myself</b>
+          - Gee thanks method signatures!!
+  - title: Method Modifiers: before/around/after
+    sections:
+      - type: snippet
+        name: around
+      - type: list
+        points: 
+          - <a href='http://search.cpan.org/~doy/Moose-2.0603/lib/Moose/Manual/MethodModifiers.pod'>Moose::Manual::Method::Modifiers</a>
+  - title: Method Signatures, colons, and YOU
+    background: images/colon.jpg
+    sections:
+      - type: list
+        points:
+          - "use Method::Signatures::Modifiers; - slight speed boost + better error messages <span style='font-size: .7em'>Make sure to RTFM, not exactly the same as MooseX::Method::Signatures (but you probably don't care)</span>"
+      - type: snippet
+        name: colon method signatures
+      - type: list
+        points:
+          - "The : means that you can call this like $pb->slides->add(title => $some_title);"
+          - If you mean to do Str :$title above, and forget the :, here's the error you get with MSM if you call it like $pb->slides->add(title => 'Flouridated water, communists and YOU!');
+          - <b>In call to Presentation::Builder::Slides::add(), was given too many arguments, it expects 1 at bdg.pl line 14.</b>
+  - title: Say what?
+    sections:
+      - type: list
+        points:
+          -  BUT if you don't use MSM, here's the error you get when you call $pb->slides->add(title => 'foo');
+      - type: raw
+        html: | 
+            <table><tr><td width='70%'><div style='font-size: .7em'><b><i>Validation failed for 'Tuple[Tuple[Object,Str],Dict[]]' with value "[ [ Presentation::Builder::Slides=HASH(0x7ff8e10289b0), "title", "foo" ], {  } ], Internal Validation Error is: \n [+] Validation failed for 'Tuple[Object,Str]' with value "[ Presentation::Builder::Slides{ type: "S5" }, "title", "foo" ]"\n  [+] More values than Type Constraints!" at /Library/Perl/5.12/MooseX/Method/Signatures/Meta/Method.pm line 435 MooseX::Method::Signatures::Meta::Method::validate('MooseX::Method::Signatures::Meta::Method=HASH(0x7ff8e2a27b78)', 'ARRAY(0x7ff8e289f388)') called at /Library/Perl/5.12/MooseX/Method/Signatures/Meta/Method.pm line 151 Presentation::Builder::Slides::add('Presentation::Builder::Slides=HASH(0x7ff8e10289b0)', 'title', 'foo') called at bdg.pl line 14</div></td><td><img src='images/qbert.jpg'></td></table>
+  - title: Handle anything
+    sections:
+      - type: snippet
+        name: handles
+      - type: list
+        points:
+          - Here's an example of "Method Delegation"
+          - "The handles => ['dom'] part means that you can call $self->dom() and that call will be 'handled' by ::Template"
+          - It'll be equivalent to $self->template->dom();
+  - title: This is not constraining enough!
+    background: images/master-shake.jpg
+    sections:
+      - type: snippet
+        name: typeconstraints
+      - type: snippet
+        name: class_type definition
+  - title: Coercion - Make them an offer they cant refuse
+    background: images/Watch_For_Moose.jpeg
+    sections:
+      - type: snippet
+        name: coerce definition
+      - type: snippet
+        name: coerce usage
   - title: Coercing objects
     sections:
       - type: snippet
@@ -138,110 +229,39 @@ slides:
     sections:
       - type: snippet
         name: Moose::Autobox
-  - title: Be Lazy
-    sections:
-      - type: snippet
-        name: lazy_build
-  - title: Handle anything
-    sections:
-      - type: snippet
-        name: handles
-  - title: Snippet class
-    sections:
-      - type: snippet
-        name: snippet class
-  - title: Overthruster Override
-    sections:
-      - type: snippet
-        name: override
-  - title: Classy
-    sections:
-      - type: snippet
-        name: class
-  - title: What type of class are you taking?
-    sections:
-      - type: snippet
-        name: class_type definition
-  - title: More colons and stuff
-    sections:
-      - type: snippet
-        name: colon method signatures 2
-  - title: images zappa-moose.jpg
-    background: images/zappa-moose.jpg
-    sections:
       - type: list
-        points:
-          - .
-  - title: images Watch_For_Moose.jpeg
-    background: images/Watch_For_Moose.jpeg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images biden-moose.jpg
-    background: images/biden-moose.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images cartoon-moose-9.gif
-    background: images/cartoon-moose-9.gif
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images dr-lexus-moose.jpg
-    background: images/dr-lexus-moose.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images funny-pictures-moose-takes-a-photo.jpeg
-    background: images/funny-pictures-moose-takes-a-photo.jpeg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images general-moose.jpg
+        points: 
+          - If you use <a href='http://search.cpan.org/~rjbs/Moose-Autobox-0.13/lib/Moose/Autobox.pm'>Moose::Autobox</a>, you get fun things like this for free
+          - Pluse even cooler stuff like this (from the docs)
+          - <pre>print [ 1 .. 10 ]->map(sub { $_ * $_ })->join(', ');</pre>
+  - title: Is Moose a Commie plot, like Flouride?
     background: images/general-moose.jpg
     sections:
       - type: list
         points:
-          - .
-  - title: images sellers-moose.jpg
+          - Moose is great, but it has dowsides
+          - Compile time penalty
+          - New stuff to learn
+          - You can <a href='https://metacpan.org/module/Moo'>Moo<a> if the performance issues bother you
+          - This has almost 2/3 of the features of Moose, few dependencies, but is compatible with Moose
+          - <a href='http://www.youtube.com/watch?v=MzTWTLaUZrg'>Ask Matt Trout about that</a>
+  - title: Uncle Moose Wants YOU!
     background: images/sellers-moose.jpg
     sections:
       - type: list
         points:
-          - .
-  - title: images sellers.jpeg
-    background: images/sellers.jpeg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images stefan-little-moose-creator.jpg
-    background: images/stefan-little-moose-creator.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images steve-martin-moose.jpg
-    background: images/steve-martin-moose.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images very-meta.jpg
-    background: images/very-meta.jpg
-    sections:
-      - type: list
-        points:
-          - .
-  - title: images yeee-haaaaah.jpeg
+          - But what can <b>YOU</b> do?
+          - Start using MOOSE, there's strength in numbers!
+          - Patches wanted for Presentation::Builder
+          - Take different input/output format
+          - Improve options for background/slide images
+          - Allow snippets to be specified using file name and line numbers
+          - Documentation
+          - Take an index.html as input, process, spit index.html output
+          - Or, write your own darn module!
+  - title: YEEEEEEEEEEEEEEEEEHHHHHHHAAAAAAAAA
     background: images/yeee-haaaaah.jpeg
     sections:
       - type: list
         points:
-          - .
-
+          - Now that you know enough to be DANGEROUS, go forth and Moose!

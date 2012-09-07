@@ -33,8 +33,9 @@ class Presentation::Builder::Sources {
 				my $file = $_;
 				$self->files->{$file} = 1;
 				my $c = File::Slurp::read_file($file);
-				while ( $c =~ m{<snip\s+([^>]+?)>(.*?)(?:</snip([^>]*?)>)}gs ) {
+				while ( $c =~ m{\#<snip\s+([^>]+?)>(.*?)(?:\#</snip([^>]*?)>)}gs ) {
 					my ($name,$snippet) = ($1,$2);
+					chomp $snippet;
 					$ret->{$name} = $snippet;
 				}
 		}
