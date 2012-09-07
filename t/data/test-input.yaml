@@ -152,7 +152,7 @@ slides:
       - type: snippet
         name: advanced isa
   - title: Objecty Perl
-    background: buffy.jpg
+    background: images/buffy.jpg
     sections:
       - type: snippet
         name: class
