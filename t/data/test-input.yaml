@@ -22,7 +22,7 @@ slides:
           - Who is this guy anyway?
           - No, I'm not one of the authors of Moose, the coolest kid on the block, or one of the world's foremost experts on OO
           - I'm an ex-particle physicist, who somehow learned Perl by mistake in graduate school
-          - I think "The Jerk" is the funniest move ever made
+          - I think "The Jerk" is the funniest movie ever made
   - title: Then why did you write this talk?
     background: images/very-meta.jpg
     sections:
@@ -94,7 +94,7 @@ slides:
           - Presentation::Builder
           - <a href='https://github.com/physicsdude/Presentation-Builder'>https://github.com/physicsdude/Presentation-Builder</a>
           - Downsides of any presentation system for code talks include <b>broken code samples</b>, <b>dealing with stupid markup you don't understand and/or don't want to deal with</b>, <b>having to show example code instead of real code</b>, <b>adding images can be a huge pain</b>, <b>no frelling syntax highlighting!?</b> etc.
-  - title: Advacned OO Design
+  - title: Advanced OO Design
     background: images/advanced-oo-design.jpg
     sections:
       - type: list
@@ -121,7 +121,8 @@ slides:
       - type: list
         points:
           - Yes, this example was pulled from the code used to generate the text you're reading right now, and syntax highlighted for HTML using Text::VimColor
-          - Oh yeah, you have to add the contents of less.css to your template's css or something if you want that to work (room for improvement here)
+          - Oh yeah, you have to add the contents of light.css to your template's css or something if you want that to work (room for improvement here)
+          - See the end of t/data/ui/pm/pretty.css in the Presentation::Builder codebase
   - title: What is this funky YAML config file you speak of?
     background: images/yaml-example.jpg
   - title: Do the MOOSE already!
