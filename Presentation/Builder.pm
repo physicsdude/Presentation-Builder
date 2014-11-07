@@ -73,13 +73,13 @@ class Presentation::Builder {
 	method content {
 		return $self->html if $self->html;
 		my $data = $self->data;
-		$self->dom->at('html title')->replace_content($data->{title});
+		$self->dom->at('html title')->replace($data->{title});
 		my $footer = $data->{footer};
 		if ( !$footer ) {
-			$footer   .= "<h3>$data->{author} ~ $data->{affiliation} ~ ".localtime." ~ Powered by ".$self->type." and Presentation::Builder</h3>";
+			$footer   .= "<h3>$data->{author} ~ $data->{affiliation} ~ ".localtime(time)." ~ Powered by ".$self->type." and Presentation::Builder</h3>";
 			$footer   .= "<h3>$data->{title}</h3>";
 		}
-		$self->dom->at('#footer')->replace_content($footer);
+		$self->dom->at('#footer')->content($footer);
 
 		if ( $self->template_mode eq 'replace' ) {
 			$self->dom->at('.presentation')->replace(

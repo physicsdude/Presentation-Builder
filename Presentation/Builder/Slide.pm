@@ -74,7 +74,7 @@ class Presentation::Builder::Slide::S5
 		# This is a hack to make S5 see the slide title, the h1 has to be first apparently
 		if ( $self->background ) {
 			$str .= "<h1 style='display: none'>".$self->title."</h1>";
-			$str .= "<div style='float: right;'><img class='slide_background_img' src='".$self->background."'></div>";
+			$str .= "<div style='float: right; max-width: 900px;'><img class='slide_background_img' src='".$self->background."'></div>";
 		}
 		$str .= $self->$orig(@_);
 		$str .= "\n</div>\n";
