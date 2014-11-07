@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    Poking Perl With a Stick
+    <!-- metadata -->
+    <meta content="S5" name="generator">
+    <meta content="S5 1.1" name="version">
+    <meta content="1234" name="presdate">
+    <meta content="Test Author" name="author">
+    <meta content="Phoenix Perl Mongers" name="company">
+    <!-- configuration parameters -->
+    <meta content="slideshow" name="defaultView">
+    <meta content="visible" name="controlVis">
+    <!-- style sheet links -->
+    <link href="ui/pm/slides.css" id="slideProj" media="projection" rel="stylesheet" type="text/css">
+    <link href="ui/pm/outline.css" id="outlineStyle" media="screen" rel="stylesheet" type="text/css">
+    <link href="ui/pm/print.css" id="slidePrint" media="print" rel="stylesheet" type="text/css">
+    <link href="ui/pm/opera.css" id="operaFix" media="projection" rel="stylesheet" type="text/css">
+    <!-- S5 JS -->
+    <script src="ui/pm/slides.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div class="layout">
+      <div id="controls"><!-- DO NOT EDIT --></div>
+      <div id="currentSlide"><!-- DO NOT EDIT --></div>
+      <div id="header"></div>
+      <div id="footer"><h3>Bryan Gmyrek, Ph.D. ~  ~ Thu Nov  6 17:46:45 2014 ~ Powered by S5 and Presentation::Builder</h3><h3>Poking Perl With a Stick</h3></div>
+    </div>
+
+    <div class="presentation">
+
+<div class="slide">
+<h1 style="display: none">Poking Perl With a Stick</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/austin_mole_stick.jpg"></div><h1>Poking Perl With a Stick</h1>
+<div class="section left">
+<h2>Debugging Remote Perl Programs With a Shiny Local GUI and Random Diversions</h2>
+<h3>Bryan Gmyrek</h3>
+<h4>GPS Insight</h4>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Who is this guy?</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/steve-martin-moose.jpg"></div><h1>Who is this guy?</h1>
+<div class="section left">
+<ul>
+	<li>Who is this guy anyway?</li>
+	<li>I&#39;m an ex-particle physicist, who somehow learned Perl by mistake in graduate school</li>
+	<li>Nowadays, I write in various languages (Perl, C++, Lua, Bash, JavaScript, and yes even PHP)</li>
+	<li>I think &quot;The Jerk&quot; is the funniest movie ever made</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Why did you write this talk?</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/dancing-frog.jpg"></div><h1>Why did you write this talk?</h1>
+<div class="section left">
+<ul>
+	<li>Doug needed a talk with a more Perl-ish twist than a tap-dancing-frog</li>
+	<li>I might not be a tap dancing frog but I&#39;ve learned some tricks of my own</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Why did you write this talk?</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/cheap-trick.jpg"></div><h1>Why did you write this talk?</h1>
+<div class="section left">
+<ul>
+	<li>After getting used to some nice GUI debugger features when writing Lua and C++</li>
+	<li>I got sick of reading debug output, and guessing what *really* happens when my Perl programs are running.</li>
+	<li>The standard perl debugger is very good.</li>
+	<li>But I got sick of text-based gaming, I mean debugging.</li>
+	<li>So I wanted to share some tricks.</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Debugging Should be Fun</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/clue-game.jpg"></div><h1>Debugging Should be Fun</h1>
+<div class="section left">
+<ul>
+	<li>If it&#39;s like a game, you&#39;ll be more likely to do it</li>
+	<li>It can help you understand how new-to-you programs work</li>
+	<li>Simply reading code is boring</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Perl Debugging for Dummies</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/quantum-dummies.jpg"></div><h1>Perl Debugging for Dummies</h1>
+<div class="section slide_left">
+<ul>
+	<li>A debugger should make your life a lot easier</li>
+	<li>Just because it&#39;s Perl doesn&#39;t mean we can&#39;t have nice things<sup>TM</sup></li>
+	<li>So how can we get nice things<sup>TM</sup> for debugging Perl programs?</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">ENTER THE DRAGON</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/enter-dragon.jpg"></div><h1>ENTER THE DRAGON</h1>
+<div class="section slide_left">
+<ul>
+	<li>Not that dragon, the KOMODO dragon!</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Komodo IDE to the Rescue</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/komodo-ide.png"></div><h1>Komodo IDE to the Rescue</h1>
+<div class="section slide_left">
+<ul>
+	<li>You don&#39;t have to change your religion, I mean editor</li>
+	<li>I did that once this century, and that&#39;s enough (vim =&gt; Sublime)</li>
+	<li>You can &quot;just&quot; use it for debugging (your main editor never has to know)</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Komodo Local Debugging: Setup</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/debug-options-1.png"></div><h1>Komodo Local Debugging: Setup</h1>
+<div class="section slide_left">
+<ul>
+	<li>Project &gt; New Project</li>
+	<li>Open the .pl file you want to run</li>
+	<li>Debug &gt; Go/Continue</li>
+	<li>Enter values in the popup</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">The Environment Tab</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/debug-options-2.png"></div><h1>The Environment Tab</h1>
+<div class="section slide_left">
+<ul>
+	<li>Tweak environment variables</li>
+	<li>Add to PATH if your perl is not in the main path</li>
+	<li>Can also add any user supplied environment variables you want</li>
+	<li>It&#39;ll remember this info in the project file</li>
+	<li>This is especially useful if you have many library directories for different projects</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Debugging Basics: Step Into, Step Over, Step Out</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/step-debug.png"></div><h1>Debugging Basics: Step Into, Step Over, Step Out</h1>
+<div class="section slide_left">
+<ul>
+	<li>Start and Stop ~ Self explanatory</li>
+	<li>Step Into ~ Steps into the function under the cursor (if possible)</li>
+	<li>Step Over ~ Steps over line, don&#39;t enter functions</li>
+	<li>Step Out ~ Return from the current function</li>
+	<li>&gt;&gt; Fast Forward ~ Run and ignore break points</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Local Debugging: Setting Break Points</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/breakpoints.png"></div><h1>Local Debugging: Setting Break Points</h1>
+<div class="section slide_left">
+<ul>
+	<li>Just click to the left of a line</li>
+	<li>Komodo will remember your break points</li>
+	<li>You can view all of them and delete them in the Breakpoints tab</li>
+	<li>Try setting one at Section.pm line 37</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Finding Gold with $DB::Single</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/gold.jpg"></div><h1>Finding Gold with $DB::Single</h1>
+<div class="section slide_left">
+<ul>
+	<li>Stepping through is helpful but can be tedious</li>
+	<li>Even with clever break point setting</li>
+	<li>Oh noes, what happened below</li>
+	<li>HASH(0x7fb1654a38b8)</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>$DB::single=1; to the rescue</h1>
+<div class="section slide_left">
+<div class="snippet"><pre>
+	override content {
+		<span class="synStatement">foreach</span> <span class="synStatement">my</span> <span class="synIdentifier">$pt</span> (<span class="synIdentifier">@{$self-&gt;points}</span>) {
+			<span class="synStatement">if</span> (UNIVERSAL::isa(<span class="synIdentifier">$pt</span>,<span class="synConstant">&#39;HASH&#39;</span>)) {
+				<span class="synIdentifier">$</span><span class="synType">DB::</span><span class="synIdentifier">single</span>=<span class="synConstant">1</span>;
+			}
+		}
+		<span class="synIdentifier">$self-&gt;html</span>(<span class="synConstant">&quot;&lt;ul&gt;</span><span class="synSpecial">\n\t</span><span class="synConstant">&lt;li&gt;&quot;</span>.<span class="synStatement">join</span>(<span class="synConstant">&quot;&lt;/li&gt;</span><span class="synSpecial">\n\t</span><span class="synConstant">&lt;li&gt;&quot;</span>,<span class="synIdentifier">@{$self-&gt;points}</span>).<span class="synConstant">&quot;&lt;/li&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&lt;/ul&gt;&quot;</span>);
+		<span class="synStatement">return</span> super();
+	}
+</pre></div>
+</div><div class="section slide_left">
+<ul>
+	<li>The program will stop whenever you set $DB::single=1;</li>
+	<li>The best part is you can use arbitrary Perl logic to do this</li>
+	<li>Which means no learning obscure debugger tool logic, yay</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">So What Was Wrong?</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/debug-3.png"></div><h1>So What Was Wrong?</h1>
+<div class="section slide_left">
+<ul>
+	<li>nov14.yaml has a line like - Hahahahah: FAIL</li>
+	<li>That needs to be wrapped in quotes</li>
+	<li>Anyway, this sort of thing can be easier to find with $DB::single</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">I Want My Money Back!</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/sonic.gif"></div><h1>I Want My Money Back!</h1>
+<div class="section slide_left">
+<ul>
+	<li>I know what you&#39;re thinking</li>
+	<li>This guy promised to talk about REMOTE debugging</li>
+	<li>I&#39;m getting to that, jeesh</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Remote Debugging: Some Assembly Required</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/assembly.jpg"></div><h1>Remote Debugging: Some Assembly Required</h1>
+<div class="section slide_left">
+<ul>
+	<li>I&#39;m not gonna lie to you</li>
+	<li>Some assembly is required</li>
+	<li>But do not abandon all hope, it&#39;s worth it</li>
+	<li>Komodo&#39;s Instructions http://bit.ly/1xayWxT</li>
+</ul>
+</div><div class="section slide_left">
+<img src="images/komodo-qr.png" style="max-width: 200px;">
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Remote Debugging, Step 1</h1>
+<div class="section slide_left">
+<ul>
+	<li>remote$ mkdir komodo</li>
+	<li>local$ cd /Applications/Komodo IDE 8.app/Contents/SharedSupport/dbgp/perllib/</li>
+	<li>local$ rsync -av * bryan.gmyrek@remote-machine.remotedomain.com:./komodo/</li>
+</ul>
+</div><div class="section slide_left">
+<pre>
+komodosetup(){
+  export PERLDB_OPTS=RemotePort=localhost:58657
+  export PERL5DB=&#39;BEGIN { require q(/home/bryan.gmyrek/komodo/perl5db.pl) }&#39;
+  export PERL5LIB=$PERL5LIB:/home/bryan.gmyrek/komodo
+  export DBGP_IDEKEY=&quot;bryan.gmyrek&quot;
+}
+export -f komodosetup
+alias perld=&quot;komodosetup; perl -d &quot;
+</pre>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Remote Debugging, Step 2</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/listener-status.png"></div><h1>Remote Debugging, Step 2</h1>
+<div class="section slide_left">
+<ul>
+	<li>Tell Komodo to Listen for Debugger Connections</li>
+	<li>Debug &gt; Listen For Debugging Connections</li>
+	<li>Add a ssh command with port forwarding alias to your local .bashrc</li>
+	<li>alias remotedebug=&#39;ssh -R 58657:localhost:58657 bryan.gmyrek@remote-machine.remotedomain.com&#39;</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Step 3: Start the Perl Program on the Remote Machine</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/tin-can-telephone.jpg"></div><h1>Step 3: Start the Perl Program on the Remote Machine</h1>
+<div class="section slide_left">
+<ul>
+	<li>SSH in with your alias, or use -RPORT:localhost:PORT</li>
+	<li>Start the program with the &#39;perld&#39; alias, or with perl -d after setting up the ENV variables</li>
+	<li>(Run remote ~/sh/README... example)</li>
+	<li>Wait in joyful anticipation for a local Komodo window to open...</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Step 4: Profit!  I mean, debug!</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/quark.jpg"></div><h1>Step 4: Profit!  I mean, debug!</h1>
+<div class="section slide_left">
+<ul>
+	<li>All remote code will show up in your local Komodo session</li>
+	<li>How cool is that?</li>
+	<li>From here, you can debug like you normally would with a local session</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Remote Gotchas</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/remote-gotchas.jpg"></div><h1>Remote Gotchas</h1>
+<div class="section slide_left">
+<ul>
+	<li>It&#39;s slower, so local testing/debugging is still preferable</li>
+	<li>Breakpoints can disappear on the left, but still exist</li>
+	<li>See the Breakpoints tab to edit/delete them</li>
+</ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1 style="display: none">Random Musings</h1><div style="float: right; max-width: 900px;"><img class="slide_background_img" src="images/linkedin.png"></div><h1>Random Musings</h1>
+<div class="section slide_left">
+<ul>
+	<li>Bitcoin is really cool.</li>
+	<li>Megadeth is great for deveoping late into the night.</li>
+	<li>Ionic is a pretty sweet framework for cross platform mobile apps.</li>
+	<li>Meteor.js looks awesome - anyone played with it?</li>
+	<li>Connect with me on LinkedIn if you haven&#39;t already --&gt;</li>
+	<li>http://linkedin.com/in/physics</li>
+</ul>
+</div>
+</div>
+
+
+</div>
+
+  </body>
+</html>

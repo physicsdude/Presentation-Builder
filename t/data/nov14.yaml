@@ -1,0 +1,222 @@
+title: Poking Perl With a Stick
+author: Bryan Gmyrek, Ph.D.
+sources:
+  - ../
+slides:
+  - title: Poking Perl With a Stick
+    background: images/austin_mole_stick.jpg
+    sections:
+      - type: raw
+        location: left
+        html: |
+          <h2>Debugging Remote Perl Programs With a Shiny Local GUI and Random Diversions</h2>
+          <h3>Bryan Gmyrek</h3>
+          <h4>GPS Insight</h4>
+  - title: Who is this guy?
+    background: images/steve-martin-moose.jpg
+    sections:
+      - type: list
+        location: left
+        points:
+          - Who is this guy anyway?
+          - I'm an ex-particle physicist, who somehow learned Perl by mistake in graduate school
+          - Nowadays, I write in various languages (Perl, C++, Lua, Bash, JavaScript, and yes even PHP)
+          - I think "The Jerk" is the funniest movie ever made
+  - title: Why did you write this talk?
+    background: images/dancing-frog.jpg
+    sections:
+      - type: list
+        location: left
+        points:
+          - Doug needed a talk with a more Perl-ish twist than a tap-dancing-frog
+          - I might not be a tap dancing frog but I've learned some tricks of my own
+  - title: Why did you write this talk?
+    background: images/cheap-trick.jpg
+    sections:
+      - type: list
+        location: left
+        points:
+          - After getting used to some nice GUI debugger features when writing Lua and C++
+          - I got sick of reading debug output, and guessing what *really* happens when my Perl programs are running.
+          - The standard perl debugger is very good.
+          - But I got sick of text-based gaming, I mean debugging.
+          - So I wanted to share some tricks.
+  - title: Debugging Should be Fun
+    background: images/clue-game.jpg
+    sections:
+      - type: list
+        location: left
+        points:
+          - If it's like a game, you'll be more likely to do it
+          - It can help you understand how new-to-you programs work
+          - Simply reading code is boring
+  - title: Perl Debugging for Dummies
+    background: images/quantum-dummies.jpg
+    sections:
+      - type: list
+        points:
+          - A debugger should make your life a lot easier
+          - Just because it's Perl doesn't mean we can't have nice things<sup>TM</sup>
+          - So how can we get nice things<sup>TM</sup> for debugging Perl programs?
+  - title: ENTER THE DRAGON
+    background: images/enter-dragon.jpg
+    sections:
+      - type: list
+        points:
+          - Not that dragon, the KOMODO dragon!
+  - title: Komodo IDE to the Rescue
+    background: images/komodo-ide.png
+    sections:
+      - type: list
+        points:
+          - You don't have to change your religion, I mean editor
+          - I did that once this century, and that's enough (vim => Sublime)
+          - You can "just" use it for debugging (your main editor never has to know)
+  - title: Komodo Local Debugging: Setup
+    background: images/debug-options-1.png
+    sections:
+      - type: list
+        points:
+          - Project > New Project
+          - Open the .pl file you want to run
+          - Debug > Go/Continue
+          - Enter values in the popup
+  - title: The Environment Tab
+    background: images/debug-options-2.png
+    sections:
+      - type: list
+        points:
+          - Tweak environment variables
+          - Add to PATH if your perl is not in the main path
+          - Can also add any user supplied environment variables you want
+          - It'll remember this info in the project file
+          - This is especially useful if you have many library directories for different projects
+  - title: Debugging Basics: Step Into, Step Over, Step Out
+    background: images/step-debug.png
+    sections:
+      - type: list
+        points:
+          - Start and Stop ~ Self explanatory
+          - Step Into ~ Steps into the function under the cursor (if possible)
+          - "Step Over ~ Steps over line, don't enter functions"
+          - Step Out ~ Return from the current function
+          - ">> Fast Forward ~ Run and ignore break points"
+  - title: Local Debugging: Setting Break Points
+    background: images/breakpoints.png
+    sections:
+      - type: list
+        points:
+          - Just click to the left of a line
+          - Komodo will remember your break points
+          - You can view all of them and delete them in the Breakpoints tab
+          - Try setting one at Section.pm line 37
+  - title: Finding Gold with $DB::Single
+    background: images/gold.jpg
+    sections:
+      - type: list
+        points:
+          - Stepping through is helpful but can be tedious
+          - Even with clever break point setting
+          - Oh noes, what happened below
+          - Hahahahah: FAIL
+  - title: "$DB::single=1; to the rescue"
+    sections:
+      - type: snippet
+        name: override
+      - type: list
+        points:
+          - The program will stop whenever you set $DB::single=1;
+          - The best part is you can use arbitrary Perl logic to do this
+          - Which means no learning obscure debugger tool logic, yay
+  - title: So What Was Wrong?
+    background: images/debug-3.png
+    sections:
+      - type: list
+        points:
+          - "nov14.yaml has a line like - Hahahahah: FAIL"
+          - That needs to be wrapped in quotes
+          - "Anyway, this sort of thing can be easier to find with $DB::single"
+  - title: I Want My Money Back!
+    background: images/sonic.gif
+    sections:
+      - type: list
+        points:
+          - I know what you're thinking
+          - This guy promised to talk about REMOTE debugging
+          - I'm getting to that, jeesh
+  - title: Remote Debugging: Some Assembly Required
+    background: images/assembly.jpg
+    sections:
+      - type: list
+        points:
+          - I'm not gonna lie to you
+          - Some assembly is required
+          - "But do not abandon all hope, it's worth it"
+          - "Komodo's Instructions http://bit.ly/1xayWxT"
+      - type: raw
+        html: <img src='images/komodo-qr.png' style='max-width: 200px;'>
+
+  - title: Remote Debugging, Step 1
+    sections:
+      - type: list
+        points:
+          - "remote$ mkdir komodo"
+          - "local$ cd /Applications/Komodo IDE 8.app/Contents/SharedSupport/dbgp/perllib/"
+          - "local$ rsync -av * bryan.gmyrek@remote-machine.remotedomain.com:./komodo/"
+      - type: raw
+        html: |
+          <pre>
+          komodosetup(){
+            export PERLDB_OPTS=RemotePort=localhost:58657
+            export PERL5DB='BEGIN { require q(/home/bryan.gmyrek/komodo/perl5db.pl) }'
+            export PERL5LIB=$PERL5LIB:/home/bryan.gmyrek/komodo
+            export DBGP_IDEKEY="bryan.gmyrek"
+          }
+          export -f komodosetup
+          alias perld="komodosetup; perl -d "
+          </pre>
+  - title: Remote Debugging, Step 2
+    background: images/listener-status.png
+    sections:
+      - type: list
+        points:
+          - Tell Komodo to Listen for Debugger Connections
+          - "Debug > Listen For Debugging Connections"
+          - Add a ssh command with port forwarding alias to your local .bashrc
+          - alias remotedebug='ssh -R 58657:localhost:58657 bryan.gmyrek@remote-machine.remotedomain.com'
+  - title: Step 3: Start the Perl Program on the Remote Machine
+    background: images/tin-can-telephone.jpg
+    sections:
+      - type: list
+        points:
+          - "SSH in with your alias, or use -RPORT:localhost:PORT"
+          - "Start the program with the 'perld' alias, or with perl -d after setting up the ENV variables"
+          - (Run remote ~/sh/README... example)
+          - Wait in joyful anticipation for a local Komodo window to open...
+  - title: Step 4: Profit!  I mean, debug!
+    background: images/quark.jpg
+    sections:
+      - type: list
+        points:
+          - All remote code will show up in your local Komodo session
+          - How cool is that?
+          - From here, you can debug like you normally would with a local session
+  - title: Remote Gotchas
+    background: images/remote-gotchas.jpg
+    sections:
+      - type: list
+        points:
+          - It's slower, so local testing/debugging is still preferable
+          - Breakpoints can disappear on the left, but still exist
+          - See the Breakpoints tab to edit/delete them
+  - title: Random Musings
+    background: images/linkedin.png
+    sections:
+      - type: list
+        points:
+          - Bitcoin is really cool.
+          - Megadeth is great for deveoping late into the night.
+          - Ionic is a pretty sweet framework for cross platform mobile apps.
+          - Meteor.js looks awesome - anyone played with it?
+          - Connect with me on LinkedIn if you haven't already -->
+          - http://linkedin.com/in/physics
