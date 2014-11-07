@@ -7,3 +7,6 @@ To view the talk, grab the code (git pull or zip file), and open this file in yo
 Check out a recording of the talk on YouTube.  
 <https://www.youtube.com/watch?v=PNFiIU8S-7g>
 Warning: it's one hour, four minutes long.  I was told to take my time :)
+
+I also based another talk about Perl debugging at least partly on this module, see 
+Presentation-Builder/t/data/nov14.html
