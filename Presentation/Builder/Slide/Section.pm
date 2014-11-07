@@ -25,6 +25,11 @@ class Presentation::Builder::Slide::Section::List
 	);
 #<snip override>
 	override content {
+		foreach my $pt (@{$self->points}) {
+			if (UNIVERSAL::isa($pt,'HASH')) {
+				$DB::single=1;
+			}
+		}
 		$self->html("<ul>\n\t<li>".join("</li>\n\t<li>",@{$self->points})."</li>\n</ul>");
 		return super();
 	}
